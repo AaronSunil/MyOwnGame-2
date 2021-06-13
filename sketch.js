@@ -12,8 +12,13 @@ pathwall21,pathwall22,pathwall23,pathwall24,pathwall25,pathwall26,pathwall27,pat
 pathwall40,pathwall41,pathwall42,pathwall43,pathwall44,pathwall45,pathwall46,pathwall47,pathwall48,pathwall49,pathwall50,pathwall50,pathwall51,pathwall52,pathwall53,pathwall54,pathwall55,pathwall56,pathwall57,
 pathwall58,pathwall59,pathwall60,pathwall61,pathwall62,pathwall63,pathwall64,pathwall65;
 
-var player;
+var player, enemy, enemyAnimation;
 
+function preLoad()
+{
+  enemyAnimation = loadAnimation("images/Enemy.png,Enemy2.png,Enemy3.png,Enemy4.png,Enemy5.png,Enemy6.png,Enemy7.png,Enemy8.png,Enemy9.png,Enemy10.png")
+  
+}
 function setup() {
   var canvas = createCanvas(1280,730);
   engine = Engine.create();
@@ -27,6 +32,9 @@ function setup() {
   labCell = new Wall(50,50,100,100);
   
   player = new Player(200,200,25,25);
+
+  enemy = new Enemy(200,200,25,25);
+  
 
   
   pathwall1 = new Wall(30,125,5,100);
